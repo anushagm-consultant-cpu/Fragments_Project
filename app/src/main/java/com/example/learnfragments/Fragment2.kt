@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 class Fragment2 : Fragment() {
 
@@ -33,6 +34,9 @@ class Fragment2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.findViewById<Button>(R.id.button_in_fragment2).setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
         Log.d(TAG, "onViewCreated")
     }
 
