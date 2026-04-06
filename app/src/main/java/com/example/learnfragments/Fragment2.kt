@@ -28,21 +28,13 @@ class Fragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Log.d(TAG, "onCreateView")
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_2, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        val view = inflater.inflate(R.layout.fragment_2, container, false)
+        
         view.findViewById<Button>(R.id.button_in_fragment2).setOnClickListener {
             parentFragmentManager.popBackStack()
         }
-        Log.d(TAG, "onViewCreated")
-    }
-
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
-        Log.d(TAG, "onViewStateRestored")
+        
+        return view
     }
 
     override fun onStart() {
